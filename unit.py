@@ -180,18 +180,25 @@ def pop_makanan(food):
 # Prosedur print_modes()
 #   Mengelist mode-mode yang didukung oleh microwave
 # Parameter
-#   {string[]} modes : nama mode-mode yang didukung
+#   {array[]} modes : nama dan power mode-mode yang didukung
+#       format [[nama =string, power =int]]
 def print_modes(modes):
-    print_delay(modes)
+    print_delay('Mode yang tersedia:')
+    i = 1
+    for mode in modes:
+        display = str(i) + ') ' + mode[0]
+        print_delay(display)
+        i += 1
 
 # Prosedur input_mode()
 #   Meminta pengguna memasukkan mode, sesuai mode-mode yang
 #   didukung oleh sistem. Sekuens program akan terhenti
 #   sampai pengguna memasukkan mode yang valid.
 # Parameter
-#   {string[]} modes : nama mode-mode yang didukung
+#   {array[]} modes : nama dan power mode-mode yang didukung
+#       format [[nama =string, power =int]]
 # Return
-#   {int} index dari array modes yang dipilih
+#   {[string, int]} array berisi nama dan power mode yang dipilih
 # Algoritma
 #   1) Meminta masukan mode
 #   2) Jika pengguna memilih mode yang tidak valid,
@@ -199,12 +206,13 @@ def print_modes(modes):
 #   3) Jika pengguna memilih mode yang valid,
 #       lanjutkan sekuens program
 def input_mode(modes):
-    mode = input_delay('Pilih mode: ')
-    while not (mode in modes):
-        print_delay('Mode tidak valid!')
-        mode = input_delay('Pilih mode: ')
-    print_delay('Menggunakan mode ' + mode)
-    return modes.index(mode)
+    num = input_delay('Masukkan nomor mode: ')
+    while not num.isnumeric() or (int(num) < 1) or not (int(num) - 1 < len(modes)):
+        print_delay('Nomor mode tidak valid!')
+        num = input_delay('Masukkan nomor mode: ')
+    index = int(num) - 1
+    print_delay('Menggunakan mode ' + modes[index][0])
+    return modes[index]
 
 # Prosedur intpu_durasi()
 #   Meminta pengguna memasukkan durasi pemanasan.
@@ -232,10 +240,14 @@ def input_durasi():
 #   @TODO kekuatan gelombang sesuai dengan mode yang dipilih
 # Parameter
 #   {boolean} state : permintaan keadaan (nyalakan/matikan)
-#   {int} mode = -1 : index mode yang dipilih
-def switch_magnetron(state, mode =-1):
+#   {[string, int]} mode =None : array berisi nama dan power mode yang dipilih
+def switch_magnetron(state, mode =None):
     if state:
-        print_delay('Magnetron menyala.')
+        print_delay(mode)
+        if mode is not None:
+            print_delay('Magnetron menyala dengan kekuatan ' + str(mode[1]))
+        else:
+            print_delay('Magnetron menyala.')
     else:
         print_delay('Magnetron mati.')
 

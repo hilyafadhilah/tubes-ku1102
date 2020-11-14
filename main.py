@@ -81,7 +81,7 @@ import unit
 #   7) Matikan lampu microwave
 def run(mode, durasi):
     unit.switch_lampu(True)
-    unit.switch_magnetron(True)
+    unit.switch_magnetron(True, mode=mode)
     unit.switch_kipas(True)
     unit.heat(durasi)
     unit.switch_kipas(False)
@@ -120,7 +120,12 @@ def run(mode, durasi):
 #       d) Kembali ke nomor (6)
 def main():
     # (1)
-    modes = ['micro', 'grill', 'defrost', 'popcorn']
+    modes = [
+        ['micro', 350],
+        ['grill', 500],
+        ['defrost', 200],
+        ['popcorn', 300]
+    ]
 
     # (2) - (11), terus berulang
     while True:
@@ -143,7 +148,7 @@ def main():
             durasi = unit.input_durasi()
 
             run(mode, durasi)
-            
+
             unit.beep()
             unit.buka_pintu()
 
