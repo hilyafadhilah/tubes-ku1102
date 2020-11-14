@@ -154,6 +154,18 @@ def main():
                 is_makanan_inside = False
             unit.tutup_pintu()
 
+# Prosedur welcome()
+#   Menampilkan pesan pembuka
+def welcome():
+    unit.print_delay('Simulasi Microwave Oven')
+    unit.print_delay('Tekan Ctrl+C untuk menghentikan program.')
+
+# Prosedur goodbye()
+#   Menampilkan pesan penutup
+def goodbye():
+    unit.print_delay('\nSimulasi dihentikan.')
+    unit.print_delay('Selamat tinggal!')
+
 # -----------------------------------------------------------
 # 03: Jantung program
 #
@@ -165,8 +177,8 @@ def main():
 # -----------------------------------------------------------
 
 try:
-    unit.welcome()
+    welcome()
     main()
 except KeyboardInterrupt:
-    unit.goodbye()
+    goodbye()
     pass
