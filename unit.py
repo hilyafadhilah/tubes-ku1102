@@ -258,7 +258,7 @@ def switch_kipas(state):
 #   1) Inisialisasi
 #   2) Tampilkan waktu yang tersisa (dalam detik)
 #   3) Beri jeda satu detik
-#   4) Jika pengguna menggagalkan proses, lanjut ke no. (4)
+#   4) Jika pengguna menggagalkan proses, lanjut ke no. (6)
 #   5) Jika waktu belum habis, kembali ke no. (1)
 #   6) Finishing
 def heat(duration):
