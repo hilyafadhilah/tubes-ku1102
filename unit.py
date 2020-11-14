@@ -74,14 +74,6 @@ def input_delay(prompt):
     sleep(0.5)
     return input(prompt)
 
-def welcome():
-    print_delay('Simulasi Microwave Oven')
-    print_delay('Tekan Ctrl+C untuk menghentikan program.')
-
-def goodbye():
-    print_delay('\nSimulasi dihentikan.')
-    print_delay('Selamat tinggal!')
-
 # Prosedur buka_pintu()
 #   Menunggu pengguna membuka pintu. Sekuens program akan
 #   terhenti sampai pengguna membuka pintu.
@@ -228,7 +220,7 @@ def input_mode(modes):
 #       lanjutkan sekuens program
 def input_durasi():
     durasi = input_delay('Masukkan durasi: ')
-    while not durasi.isnumeric() or int(durasi) > 0:
+    while not durasi.isnumeric() or int(durasi) <= 0:
         print_delay('Durasi tidak valid!')
         durasi = input_delay('Masukkan durasi: ')
     print_delay('Memanaskan selama ' + durasi + ' detik')
