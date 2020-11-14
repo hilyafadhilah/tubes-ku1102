@@ -48,7 +48,7 @@ def tutup_pintu():
         state = input_delay('Tutup pintu? (n): ')
     print_delay('Pintu tertutup.')
 
-def switch_lampu(state):=
+def switch_lampu(state):
     if state:
         print_delay('Lampu menyala.')
     else:
@@ -57,7 +57,7 @@ def switch_lampu(state):=
 def input_makanan():
     return input_delay('Masukkan makanan: ')
 
-def switch_makanan(state, name):=
+def switch_makanan(state, name):
     if name == '' or name.isspace():
         print_delay('Microwave kosong.')
     elif state:
@@ -65,7 +65,7 @@ def switch_makanan(state, name):=
     else:
         print_delay(name + ' telah dikeluarkan dari microwave.')
 
-def keluarkan_makanan(name):=
+def keluarkan_makanan(name):
     keluarkan = input_delay('Keluarkan makanan? ')
     if keluarkan == 'y':
         return True
