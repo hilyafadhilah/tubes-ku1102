@@ -57,22 +57,26 @@ def switch_lampu(state):
 def input_makanan():
     return input_delay('Masukkan makanan: ')
 
-def switch_makanan(state, name):
-    if name == '' or name.isspace():
+def has_makanan(food):
+    return (food != '' and not food.isspace())
+
+def switch_makanan(state, food):
+    if not has_makanan(food):
         print_delay('Microwave kosong.')
     elif state:
-        print_delay(name + ' telah dimasukkan ke dalam microwave.')
+        print_delay(food + ' telah dimasukkan ke dalam microwave.')
     else:
-        print_delay(name + ' telah dikeluarkan dari microwave.')
+        print_delay(food + ' telah dikeluarkan dari microwave.')
 
-def keluarkan_makanan(name):
-    keluarkan = input_delay('Keluarkan makanan? ')
-    if keluarkan == 'y':
+def pop_makanan(food):
+    if has_makanan(food):
+        keluarkan = input_delay('Keluarkan ' + str(makanan) + '? (n) ')
+        return (keluarkan == 'y')
+    else:
+        print_delay('Tidak ada makanan untuk dikeluarkan!')
         return True
-    else:
-        return False
 
-def print_mode(modes):
+def print_modes(modes):
     print_delay(modes)
 
 def input_mode(modes):
@@ -91,7 +95,7 @@ def input_durasi():
     print_delay('Memanaskan selama ' + durasi + ' detik')
     return int(durasi)
 
-def switch_magnetron(state):
+def switch_magnetron(state, mode =-1):
     if state:
         print_delay('Magnetron menyala.')
     else:
@@ -103,7 +107,7 @@ def switch_kipas(state):
     else:
         print_delay('Kipas mati.')
 
-def heat(mode, durasi):
+def heat(durasi):
     print_delay('Mulai memanaskan...')
     print_delay('Tekan Ctrl+C untuk menghentikan pemanasan.')
     sleep(1)
