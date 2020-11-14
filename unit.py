@@ -265,7 +265,7 @@ def heat(duration):
     print_delay('Mulai memanaskan...')
     print_delay('Tekan Ctrl+C untuk menghentikan pemanasan.')
     try:
-        for i in range(durasi, -1, -1):
+        for i in range(duration, -1, -1):
             if i > 0:
                 print_delay(str(i) + ' s')
                 sleep(1)
