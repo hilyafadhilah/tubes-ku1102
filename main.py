@@ -46,13 +46,11 @@
 #   Terdiri atas prosedur-prosedur untuk menggunakan unit-unit
 #   di dalam microwave
 # Prosedur yang digunakan
-#   {void}      welcome()
-#   {void}      goodbye()
 #   {void}      buka_pintu()
 #   {void}      tutup_pintu()
 #   {void}      switch_lampu(state =boolean)
 #   {string}    input_makanan()
-#   {void}      switch_makanan(state =boolean)
+#   {void}      switch_makanan(state =boolean, food =string)
 #   {void}      print_modes(modes =array)
 #   {string}    input_mode(modes =array)
 #   {int}       input_durasi()
