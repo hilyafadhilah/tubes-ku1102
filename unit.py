@@ -28,8 +28,7 @@ def tutup_pintu():
         state = input_delay('Tutup pintu? (n): ')
     print_delay('Pintu tertutup.')
 
-def switch_lampu(state):
-    sleep(0.5)
+def switch_lampu(state):=
     if state:
         print_delay('Lampu menyala.')
     else:
@@ -38,8 +37,7 @@ def switch_lampu(state):
 def input_makanan():
     return input_delay('Masukkan makanan: ')
 
-def switch_makanan(state, name):
-    sleep(0.5)
+def switch_makanan(state, name):=
     if name == '' or name.isspace():
         print_delay('Microwave kosong.')
     elif state:
@@ -47,8 +45,7 @@ def switch_makanan(state, name):
     else:
         print_delay(name + ' telah dikeluarkan dari microwave.')
 
-def keluarkan_makanan(name):
-    sleep(0.5)
+def keluarkan_makanan(name):=
     keluarkan = input_delay('Keluarkan makanan? ')
     if keluarkan == 'y':
         return True
@@ -75,21 +72,18 @@ def input_durasi():
     return int(durasi)
 
 def switch_magnetron(state):
-    sleep(0.5)
     if state:
         print_delay('Magnetron menyala.')
     else:
         print_delay('Magnetron mati.')
 
 def switch_kipas(state):
-    sleep(0.5)
     if state:
         print_delay('Kipas menyala.')
     else:
         print_delay('Kipas mati.')
 
 def heat(mode, durasi):
-    sleep(0.5)
     print_delay('Mulai memanaskan...')
     print_delay('Tekan Ctrl+C untuk menghentikan pemanasan.')
     sleep(1)
@@ -105,5 +99,4 @@ def heat(mode, durasi):
     print_delay('Selesai memanaskan...')
 
 def beep():
-    sleep(0.5)
     print_delay('BEEP!')
