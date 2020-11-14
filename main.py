@@ -12,8 +12,8 @@
 #
 # Semester Ganjil TPB 2020
 #
-# (C) 2020 Hilya F. Imania, Gibran Darmawan,
-# Joy P. Sitanggang, and Rd. Elviana L.
+# (C) 2020 Hilya Imania, Gibran Darmawan,
+# Joyata Sitanggang, and Rd. Elviana Muhlis
 # Jakarta, Indonesia
 # Released under MIT License (MIT)
 # -----------------------------------------------------------
