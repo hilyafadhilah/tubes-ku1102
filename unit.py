@@ -243,7 +243,6 @@ def input_durasi():
 #   {[string, int]} mode =None : array berisi nama dan power mode yang dipilih
 def switch_magnetron(state, mode =None):
     if state:
-        print_delay(mode)
         if mode is not None:
             print_delay('Magnetron menyala dengan kekuatan ' + str(mode[1]))
         else:
