@@ -171,7 +171,7 @@ def switch_makanan(state, food):
 #   2) Jika makanan kosong, tunjukkan
 def pop_makanan(food):
     if has_makanan(food):
-        keluarkan = input_delay('Keluarkan ' + str(makanan) + '? (n) ')
+        keluarkan = input_delay('Keluarkan ' + str(food) + '? (n) ')
         return (keluarkan == 'y')
     else:
         print_delay('Tidak ada makanan untuk dikeluarkan!')
